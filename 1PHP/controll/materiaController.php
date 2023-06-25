@@ -2,8 +2,15 @@
 require_once('./../model/materias.class.php');
 require_once('./../model/database.php');
 
+if(isset($_GET['busca'])){//busca ajax
+    $busca = $_GET['busca'];
+    $resultados = materias::buscarNome($busca);
 
-if (isset($_GET['pagina'])) {//listagem ajax
+    $jsonResultados= json_encode($resultados);
+
+    echo $jsonResultados;
+}
+else{if (isset($_GET['pagina'])) {//listagem ajax
     $pagina = $_GET['pagina'];
     materias::listarHTML($pagina);
 }
@@ -63,4 +70,5 @@ else{if(isset($_GET['act'])&& $_GET['act'] == 'delete'){
         header('location:./../view/menu.php');
         exit;
     }
+}
 }
