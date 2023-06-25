@@ -77,6 +77,34 @@ class materias{
         return $materias;
     }
 
+    public static function buscarNome($busca){
+
+        $materias = array();
+
+        //TODO: Faz a conexão com o Database
+        $con = database::conecta();
+
+        //TODO: Prepara o SQL com a tabela correta
+        $stmt = $con->prepare("SELECT * FROM materias WHERE nome LIKE '%:nome%'");
+        $stmt->bindValue(':nome', $busca);
+
+        //TODO: Executa o comando
+        $stmt->execute();
+
+        while ($linha = $stmt->fetch()) {
+            $m = new materias(
+                mb_strtoupper($linha['nome']),
+                $linha['descricao'],
+                $linha['preco']
+            );
+
+            
+
+            $materias[] = $m;
+        }
+
+        return $materias;
+    }
 
     public static function listarHTML($pagina){
             foreach(materias::listarMateria($pagina) as $materia){
