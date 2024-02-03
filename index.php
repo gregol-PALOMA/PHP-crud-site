@@ -1,4 +1,4 @@
 <?php 
     // Redirect to login page
-    header('Localhost: ./controll/loginController.php');
+    header('Localhost: ./Controller/loginController.php');
 ?>
