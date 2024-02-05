@@ -1,5 +1,5 @@
 <?
-    class adm{
+    class user{
         private $id;
         private $name;
         private $email;
