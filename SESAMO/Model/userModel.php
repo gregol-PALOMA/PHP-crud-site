@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?
     class user{
         private $id;
@@ -42,4 +43,50 @@
         public function setPassword($password){
             $this->password = $password;
         }
+=======
+<?
+    class user{
+        private $id;
+        private $name;
+        private $email;
+        private $password;
+
+        public function __contruct($name, $email, $password){
+            $this->name = $name;
+            $this->email = $email;
+            $this->password = $password;
+        }
+
+        public function getId(){
+            return $this->id;
+        }
+
+        public function setId($id){
+            $this->id = $id;
+        }
+
+        public function getName(){
+            return $this->name;
+        }
+
+        public function setName($name){
+            $this->name = $name;
+        }
+
+        public function getEmail(){
+            return $this->email;
+        }
+
+        public function setEmail($email){
+            $this->email = $email;
+        }
+
+        public function getPassword(){
+            return $this->password;
+        }
+
+        public function setPassword($password){
+            $this->password = $password;
+        }
+>>>>>>> d2b7ada15b56dc488a704fb1f97bb136043156e1
     }
