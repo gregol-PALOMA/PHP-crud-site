@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<HEAD
 # SESAMO project
 
 Hello! This repository contains some results of my practice in PHP. 
